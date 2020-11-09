@@ -106,6 +106,19 @@ namespace Google {
       this.impl = impl;
     }
 
+    public static GoogleSignIn GetInstance(GoogleSignInConfiguration Configuration)
+    {
+#if UNITY_ANDROID || UNITY_IOS
+      if (theInstance == null || theConfiguration == null || theConfiguration != Configuration)
+      {
+          theConfiguration = Configuration;
+          theInstance = new GoogleSignIn(new GoogleSignInImpl(Configuration));
+          return theInstance;
+      }
+#endif
+      return null;
+    }
+
     public void EnableDebugLogging(bool flag) {
             impl.EnableDebugLogging(flag);
     }
