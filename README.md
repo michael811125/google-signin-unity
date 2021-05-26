@@ -11,18 +11,8 @@ This repository makes it possible to use [google-signin-for-unity](https://githu
   ```json
   {
     "dependencies": {
-      "com.google.external-dependency-manager": "1.2.160",
       "com.google-signin.unity": "https://github.com/unfilet/google-signin-unity.git#1.0.5"
-    },
-    "scopedRegistries": [
-    {
-      "name": "Game Package Registry by Google",
-      "url": "https://unityregistry-pa.googleapis.com",
-      "scopes": [
-        "com.google"
-      ]
     }
-    ]
   }
   ```
 
